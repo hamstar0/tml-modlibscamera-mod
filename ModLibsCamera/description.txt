@@ -1,1 +1,1 @@
-Mod Libs - Audio Services is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Supplies classes and services for controlling the player's game view (camera), including movement paths, zoom, shake effects, etc.
