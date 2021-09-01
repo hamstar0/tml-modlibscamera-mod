@@ -28,15 +28,5 @@ namespace ModLibsCamera {
 
 			ModLibsCameraMod.Instance = null;
 		}
-
-
-		////////////////
-
-		public override void PostUpdateEverything() {
-			if( !Main.gameMenu ) {
-				CameraAnimationManager.Instance?.ApplyAnimations();
-				Camera.Instance?.ApplyCameraEffects();
-			}
-		}
 	}
 }
