@@ -2,6 +2,8 @@
 using Terraria;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsCamera.Classes.CameraAnimation;
+using ModLibsCamera.Services.Camera;
 
 
 namespace ModLibsCamera {
@@ -12,7 +14,7 @@ namespace ModLibsCamera {
 
 
 		////////////////
-
+		
 		public override void Load() {
 			ModLibsCameraMod.Instance = this;
 		}
@@ -25,6 +27,16 @@ namespace ModLibsCamera {
 			} catch { }
 
 			ModLibsCameraMod.Instance = null;
+		}
+
+
+		////////////////
+
+		public override void PostUpdateEverything() {
+			if( !Main.gameMenu ) {
+				CameraAnimationManager.Instance?.ApplyAnimations();
+				Camera.Instance?.ApplyCameraEffects();
+			}
 		}
 	}
 }
