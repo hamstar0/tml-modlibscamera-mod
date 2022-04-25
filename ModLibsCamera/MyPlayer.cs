@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsCore.Libraries.TModLoader;
 using ModLibsCamera.Commands;
 using ModLibsCamera.Classes.CameraAnimation;
 using ModLibsCamera.Services.Camera;
@@ -17,7 +18,7 @@ namespace ModLibsCamera {
 
 			//
 
-			var lockCamCmd = ModContent.GetInstance<CameraLockCommand>();
+			var lockCamCmd = TmlLibraries.SafelyGetInstance<CameraLockCommand>();
 
 			if( lockCamCmd.IsCameraLocked ) {
 				Main.screenPosition = lockCamCmd.CameraPosition;

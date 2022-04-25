@@ -21,7 +21,7 @@ namespace ModLibsCamera {
 
 		////
 
-		[DefaultValue( true )]
+		//[DefaultValue( true )]
 		public bool CameraLockCommandEnabled { get; set; } = false;
 	}
 }

@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
-using ModLibsCore.Libraries.Debug;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ModLibsCore.Libraries.Debug;
+using ModLibsCore.Libraries.TModLoader;
 
 
 namespace ModLibsCamera.Commands {
@@ -46,12 +47,12 @@ namespace ModLibsCamera.Commands {
 
 			//
 
-			var mycommand = ModContent.GetInstance<CameraLockCommand>();
+			var mycommand = TmlLibraries.SafelyGetInstance<CameraLockCommand>();
 
 			mycommand.IsCameraLocked = !mycommand.IsCameraLocked;
 
 			if( mycommand.IsCameraLocked ) {
-				this.CameraPosition = Main.screenPosition;
+				mycommand.CameraPosition = Main.screenPosition;
 			}
 
 			//
